@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% include '../_partials/head.njk'%}
+    <title>{% block title %}{% endblock %}</title>
+    {% block style %}{% endblock %}
+</head>
+<body>
+    {% include '../_partials/header.njk' %}
+    <main class="conteiner">
+        {% block content %}{% endblock %}
+    </main>
+    {% include '../_partials/footer.njk' %}
+    <script src="{{'js/main.js'}}"></script>
+    {% block script %}{% endblock %}
+</body>
+</html>

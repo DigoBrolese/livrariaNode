@@ -1,0 +1,34 @@
+{% extends '_layouts/layout.njk' %}
+
+{% block style %}
+    <link type="text/css" rel="stylesheet" href="{{ 'css/home/geral.css'  }}">
+{% endblock %}
+
+{% block title %}eLivraria{% endblock %}
+
+{% block content %}
+
+    <div class="conteiner-row">
+    {% for livro in livros %}
+        <p>{{ livro.nome_livro }}</p>
+    {% endfor %}
+        <div class="head-data">
+            <h2>Lançamentos</h2>
+            <button class="btn btn-secundary btn-see-more"><i class="material-icons">add</i><span>Ver Mais</span></button>
+        </div>
+        <div class="card-conteiner">
+            <div class="card">
+                <div class="card-img">
+                    <a href=""><img src="" alt="livro"></a>
+                    <span>R$ 79,90</span>
+                    <button type="button"><i class="material-icons">add_shopping_cart</i></button>
+                </div>
+                <div class="card-content">
+                    <p>Game of Thrones</p>
+                    <p>George R. R. Martin</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
