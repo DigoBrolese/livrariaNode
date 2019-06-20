@@ -6,11 +6,13 @@ const indexRouter = require('./routes/route');
 
 const app = express();
 
-nunjucks.configure(path.resolve(__dirname, 'views'), {
+const env = nunjucks.configure(path.resolve(__dirname, 'views'), {
     autoescape: true,
     express: app,
     watch: true
 });
+
+env.addGlobal('url', 'http://localhost:3000/');
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));

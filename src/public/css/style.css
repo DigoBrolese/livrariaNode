@@ -6,12 +6,6 @@ html                { font-family: 'Roboto', sans-serif; color: #212121; backgro
 .material-icons     { user-select: none; }
 .lineHeigthZero     { line-height: inherit !important; }
 .hedder             { position: sticky; top: 0; z-index: 10; user-select: none}
-.hedder input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus {
-    border: #F5F5F5;
-    -webkit-text-fill-color: #F5F5F5;
-    -webkit-box-shadow: 0 0 0 1000px #D50000 inset;
-    transition: background-color 5000s ease-in-out 0s;
-}
 
 main { position: relative; }
 .btn {
@@ -31,10 +25,6 @@ main { position: relative; }
 .btn-primaty {
     color: #F5F5F5;
     background-color: #EA5555;
-}
-
-.btn:hover {
-    border-bottom: 3px solid #B71C1C;
 }
 
 .btn-secundary {
@@ -62,7 +52,6 @@ nav .removeHover:hover{ background-color: #D50000; border-radius: 4px; }
 nav #logo           { width: 57px; align-self: self-start; margin-top: 0.5rem; }
 nav ul              { list-style-type: none; display: flex; margin-right: 15px; align-items: center; height: 100%; }
 nav ul>li           { padding: 0 10px; cursor: pointer; }
-nav ul>li:hover     { background-color: #EA5555; }
 nav ul>li>a         { text-decoration: none; color: #F5F5F5; display: flex; align-items: center; width: max-content; }
 nav ul>li>a>i       { margin: 0 5px; }
 
@@ -83,32 +72,46 @@ nav ul .searchClick{
     cursor: pointer;
 }
 
-nav ul .btn-search{
+nav ul .btn-search {
     background-color: rgba(255, 255, 255, 0.15);
     border: 0;
-    padding: 5px 8px;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 7px 8px;
     cursor: pointer;
     color: #F5F5F5;
 }
 
 nav ul .btn-search > i{
     font-size: 14px;
-    margin-top: 6px;
+    /* Uso do Important deve-se a importação do materalize ter sobescrito alguns atributos */
+    display: inherit !important;
+    height: inherit !important;
+    line-height: inherit !important;
 }
 
 nav ul .formMenuConteiner input {
-    font-size: 14px;
-    background: none;
-    color: #F5F5F5;
-    width: 81%;
-    height: 20px;
-    border: none;
-    flex-grow: 1;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    outline: none;
+    /* Uso do Important deve-se a importação do materalize ter sobescrito alguns atributos */
+    font-size: 14px !important;
+    background: none !important;
+    color: #F5F5F5 !important;
+    width: 81% !important;
+    height: 20px !important;
+    border: none !important;
+    flex-grow: 1 !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    outline: none !important;
+    margin: 0 !important;
 }
+nav ul .formMenuConteiner input:focus {
+    /* Uso do Important deve-se a importação do materalize ter sobescrito alguns atributos */
+    border-bottom: inherit !important;
+    -webkit-box-shadow: inherit !important;
+    box-shadow: inherit !important;
+}
+
 nav ul .formMenuConteiner input::placeholder { color: #F5F5F5; }
 
 .conteiner {
@@ -140,10 +143,6 @@ nav ul .formMenuConteiner input::placeholder { color: #F5F5F5; }
 .footer .footer-content div>ul>li>a {
     color: #F5F5F5;
     text-decoration: none;
-}
-
-.footer .footer-content div>ul>li>a:hover {
-    color: #FFCDD2;
 }
 
 .footer .footer-copyright {

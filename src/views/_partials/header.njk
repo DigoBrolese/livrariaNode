@@ -3,7 +3,7 @@
         <ul class="navMenu">
             <li class="removeHover">
                 <a href="" class="navLogo">
-                    <img id="logo" src="{{'img/logo.png'}}" alt="logo"><span class="siteTitle">eLivraria</span>
+                    <img id="logo" src="{{ url }}{{'img/logo.png'}}" alt="logo"><span class="siteTitle">eLivraria</span>
                 </a>
             </li>
         </ul>
@@ -12,12 +12,12 @@
                 <form action="" method="get" class="formMenuConteiner">
                     <i class="material-icons lineHeigthZero searchClick">search</i>
                     <input type="text" placeholder="Pesquisar" name="search" id="searchInput" required>
-                    <button type="submit" class="btn-search" hidden><i class="material-icons">arrow_forward</i></button>
+                    <button type="submit" class="btn-search" hidden><i class="material-icons" id="submitSearch">arrow_forward</i></button>
                 </form>
             </li>
         </ul>
         <ul>
-            <li><a href="#login"><i class="material-icons lineHeigthZero">account_circle</i><span class="siteTitle">Entre ou Cadastre-se</span></a>
+            <li><a href="{{ url }}{{ '/login' }}"><i class="material-icons lineHeigthZero">account_circle</i><span class="siteTitle">Entre ou Cadastre-se</span></a>
             </li>
             <li><a href="#"><i class="material-icons lineHeigthZero">shopping_cart</i></a></li>
         </ul>

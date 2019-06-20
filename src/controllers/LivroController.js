@@ -2,7 +2,7 @@ const {
     livro: Livro,
   } = require('../models')
 
-class HomeController {
+class LivroController {
 
     async index(req, res) {
         const livros = await Livro.findAll();
@@ -12,4 +12,4 @@ class HomeController {
 
 }
 
-module.exports = new HomeController();
+module.exports = new LivroController();
