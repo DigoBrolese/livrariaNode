@@ -2,7 +2,7 @@
     <nav class="navConteiner">
         <ul class="navMenu">
             <li class="removeHover">
-                <a href="" class="navLogo">
+                <a href="{{ url }}" class="navLogo">
                     <img id="logo" src="{{ url }}{{'img/logo.png'}}" alt="logo"><span class="siteTitle">eLivraria</span>
                 </a>
             </li>
@@ -17,9 +17,32 @@
             </li>
         </ul>
         <ul>
-            <li><a href="{{ url }}{{ '/login' }}"><i class="material-icons lineHeigthZero">account_circle</i><span class="siteTitle">Entre ou Cadastre-se</span></a>
+            <li>
+                <a class="dropdown-trigger" data-target="loginModal">
+                    <i class="material-icons lineHeigthZero">account_circle</i>
+                    <span class="siteTitle">Entre ou Cadastre-se</span>
+                </a>
             </li>
             <li><a href="#"><i class="material-icons lineHeigthZero">shopping_cart</i></a></li>
         </ul>
     </nav>
 </header>
+
+<ul id='loginModal' class='dropdown-content'>
+    <li >
+        <div class="input-field input-drop">
+            <label for="email">E-mail</label>
+            <input type="text" id="email" placeholder="email@email.com" autocomplete="">
+        </div>
+    </li>
+    <li>
+        <div class="input-field input-drop">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" placeholder="********">
+        </div>
+    </li>
+    <li style="display: flex; align-items: center; justify-content: center; flex-direction: column">
+        <button class="btn waves-effect">Entrar</button>
+        <button class="btn waves-effect btn-singin" href="{{ url }}singin">Cadastrar</button>
+    </li>
+  </ul>

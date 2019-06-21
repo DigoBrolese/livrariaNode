@@ -6,7 +6,7 @@ const axios = require('axios/index');
 /* GET home page. */
 router.get('/', controllers.LivroController.index);
 
-router.get('/login', function (req, res) {
+router.get('/singin', function (req, res) {
     return res.render('login/geral');
 });
 

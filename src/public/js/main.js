@@ -25,3 +25,18 @@ document.querySelector('#searchInput').addEventListener('focusout', function (e)
 document.querySelector('.searchClick').addEventListener('click', e => {
     document.querySelector('#searchInput').focus();
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const elems = document.querySelectorAll('.dropdown-trigger');
+    const instances = M.Dropdown.init(elems, {
+        closeOnClick: false
+    });
+});
+
+document.querySelector('.btn-singin').addEventListener('click', e => {
+    let url = window.location.href;
+    url = url.split('/');
+    url = url[0]+"//"+url[2]+"/";
+    window.location = url+"singin";
+});

@@ -90,6 +90,44 @@ nav ul .btn-search > i{
     line-height: inherit !important;
 }
 
+nav ul > li .dropdown-content{
+    height: 235px;
+}
+
+
+nav ul > li .dropdown-content .input-drop{
+    margin-top: 15px;
+}
+
+nav ul > li .dropdown-content li{
+    line-height: 3rem;
+}
+
+nav ul > li .dropdown-content li > button{
+    margin: 5px 0;
+}
+
+nav ul > li .dropdown-content li > button:first-of-type {
+    background-color: #D50000;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+nav ul > li .dropdown-content li > button:last-of-type {
+    background-color: #fff;
+    color: #494949;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+nav ul > li .dropdown-content li:hover{
+    background-color: inherit;
+}
+
 nav ul .formMenuConteiner input {
     /* Uso do Important deve-se a importação do materalize ter sobescrito alguns atributos */
     font-size: 14px !important;

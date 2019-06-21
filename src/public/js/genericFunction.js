@@ -22,3 +22,5 @@ function isVisible(el) {
         return $style.position === 'fixed' || isVisible(el.parentNode);
     }
 }
+
+M.AutoInit();
