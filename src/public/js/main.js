@@ -1,3 +1,7 @@
+let href = window.location.href;
+href = href.split('/');
+const url = href[0]+"//"+href[2]+"/";
+
 if (!isVisible(document.querySelector('#searchInput'))) {
     let searchInput = document.querySelector('#searchInput');
     document.querySelector('.searchClick').addEventListener('click', function (e) {
@@ -35,8 +39,22 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.querySelector('.btn-singin').addEventListener('click', e => {
-    let url = window.location.href;
-    url = url.split('/');
-    url = url[0]+"//"+url[2]+"/";
     window.location = url+"singin";
+});
+
+document.querySelector('.btn-login').addEventListener('click', e => {
+    let dados = {
+        email: document.querySelector('#email').value,
+        senha: document.querySelector('#senha').value
+    };
+
+    axios.post('/login', dados).then( (res) => {
+        window.location.href = url;
+    }).catch((error) => {
+        M.toast({html: error.response.data.message});
+    });
+});
+
+document.querySelector('.btn-logout').addEventListener('click', e => {
+    window.location.href = url+"logout";
 });

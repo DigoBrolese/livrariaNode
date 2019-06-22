@@ -90,10 +90,13 @@ nav ul .btn-search > i{
     line-height: inherit !important;
 }
 
-nav ul > li .dropdown-content{
+nav ul > li #loginModal{
     height: 285px;
 }
 
+nav ul > li #logoutModal{
+    height: 110px;
+}
 
 nav ul > li .dropdown-content .input-drop{
     margin-top: 15px;

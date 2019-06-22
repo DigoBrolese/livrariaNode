@@ -22,6 +22,10 @@ module.exports = {
                 allowNull: false,
                 type: DataTypes.STRING,
             },
+            type: {
+                allowNull: true,
+                type: DataTypes.ENUM('admin', 'usuario'),
+            },
         });
     },
 

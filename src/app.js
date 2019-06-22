@@ -3,7 +3,11 @@ const path = require('path');
 const nunjucks = require('nunjucks');
 const indexRouter = require('./routes/route');
 const cookieParser = require('cookie-parser');
+
+// Session
 const session = require('express-session');
+const passaport = require('passport');
+const MySQLStore = require('express-mysql-session')(session);
 
 const app = express();
 
@@ -22,10 +26,25 @@ app.use(express.static(path.resolve(__dirname, 'public', 'img')));
 app.use(express.static(path.resolve(__dirname, 'public', 'js')));
 app.use(express.json());
 app.use(cookieParser());
-app.use(session({secret: 'krunal', saveUninitialized: false, resave: false}));
+
+// Session
+const sessionStore = new MySQLStore({ user: 'root', password: '123456', database: 'eLivraria', host: 'localhost', dialect: 'mysql', });
+app.use(session({ secret: 'livra', resave: false, saveUninitialized: false, store: sessionStore }));
+app.use(passaport.initialize());
+app.use(passaport.session());
+
 
 app.use('/', indexRouter);
 app.set('view engine', 'njk');
+
+passaport.serializeUser(function (user, done) {
+    done(null, user);
+});
+
+passaport.deserializeUser(function (user, done) {
+    done(null, user);
+});
+
 
 app.listen(3000);
 

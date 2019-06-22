@@ -18,16 +18,25 @@
         </ul>
         <ul>
             <li>
-                <a class="dropdown-trigger" data-target="loginModal">
+                <a class="dropdown-trigger" data-target="{% if user.id %}logoutModal{% else %}loginModal{% endif %}">
                     <i class="material-icons lineHeigthZero">account_circle</i>
-                    <span class="siteTitle">Entre ou Cadastre-se</span>
+                    {% if user.id %}
+                        <span class="siteTitle">{{user.name}}</span>
+                    {% else %}
+                        <span class="siteTitle">Entre ou Cadastre-se</span>
+                    {% endif %}
                 </a>
             </li>
             <li><a href="#"><i class="material-icons lineHeigthZero">shopping_cart</i></a></li>
         </ul>
     </nav>
 </header>
-
+<ul id='logoutModal' class='dropdown-content'>
+    <li>{{user.name}}</li>
+    <li>
+        <button class="btn waves-effect btn-logout">Sair</button>
+    </li>
+</ul>
 <ul id='loginModal' class='dropdown-content'>
     <li>Login</li>
     <li>
@@ -43,7 +52,7 @@
         </div>
     </li>
     <li style="display: flex; align-items: center; justify-content: center; flex-direction: column">
-        <button class="btn waves-effect">Entrar</button>
-        <button class="btn waves-effect btn-singin" href="{{ url }}singin">Cadastrar</button>
+        <button class="btn waves-effect btn-login">Entrar</button>
+        <button class="btn waves-effect btn-singin">Cadastrar</button>
     </li>
 </ul>
