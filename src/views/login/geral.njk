@@ -7,7 +7,35 @@
 {% block title %}Login - eLivraria{% endblock %}
 
 {% block content %}
-    <div>
-
+    <div class="singin-contaner">
+        <div class="singin-contaner-img">
+            <img src="{{ url }}img/Frame.png" alt="">
+        </div>
+        <div class="singin-contaner-form">
+            <h4>Cadastre-se</h4>
+            <form id="form-singin">
+                <div>
+                    <div class="input-field">
+                        <input type="text" name="nome" class="validate" id="campo-nome">
+                        <label for="campo-nome">Nome</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" name="email" class="validate" id="campo-email">
+                        <label for="campo-email">Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="sennha" class="validate" id="campo-senha">
+                        <label for="campo-senha">Senha</label>
+                    </div>
+                </div>
+                <div class="button-form-div">
+                    <button class="btn btn-small btn-secundary waves-effect btn-cancel" type="button">Cancelar</button>
+                    <button class="btn btn-small btn-primaty waves-effect" id="btn-add-user" type="button">Cadastrar</button>
+                </div>
+            </form>
+        </div>
     </div>
+{% endblock %}
+{% block script %}
+    <script src="{{ url }}{{'js/login/geral.js'}}"></script>
 {% endblock %}

@@ -6,8 +6,10 @@ const axios = require('axios/index');
 /* GET home page. */
 router.get('/', controllers.LivroController.index);
 
-router.get('/singin', function (req, res) {
-    return res.render('login/geral');
-});
+router.get('/login', controllers.UsersController.login);
+
+router.get('/singin', controllers.UsersController.index);
+
+router.post('/api/singin/create', controllers.UsersController.create);
 
 module.exports = router;

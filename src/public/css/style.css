@@ -91,7 +91,7 @@ nav ul .btn-search > i{
 }
 
 nav ul > li .dropdown-content{
-    height: 235px;
+    height: 285px;
 }
 
 
@@ -251,6 +251,10 @@ nav ul .formMenuConteiner input::placeholder { color: #F5F5F5; }
 
     nav ul .formMenuConteiner #searchInput{
         display: none;
+    }
+
+    nav ul > li .dropdown-content {
+        min-width: 200px;
     }
 
     nav ul .btn-search {
