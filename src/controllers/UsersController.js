@@ -9,6 +9,10 @@ class UsersController {
 
     async index(req, res) {
 
+        if (req.isAuthenticated()) {
+            return res.redirect('/');
+        }
+
         return res.render('login/geral');
 
     }

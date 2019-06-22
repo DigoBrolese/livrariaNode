@@ -7,6 +7,7 @@ html                { font-family: 'Roboto', sans-serif; color: #212121; backgro
 .lineHeigthZero     { line-height: inherit !important; }
 .hedder             { position: sticky; top: 0; z-index: 10; user-select: none}
 
+h2 { font-size: 2rem; margin: 1rem 0; }
 main { position: relative; }
 .btn {
     border: none;

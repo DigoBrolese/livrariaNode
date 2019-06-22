@@ -9,25 +9,26 @@
 {% block content %}
 
     <div class="conteiner-row">
-    {% for livro in livros %}
-        <p>{{ livro.nome_livro }}</p>
-    {% endfor %}
         <div class="head-data">
             <h2>Lançamentos</h2>
-            <button class="btn btn-secundary btn-see-more"><i class="material-icons">add</i><span>Ver Mais</span></button>
+            {% if user.type == 'admin' %}
+                <button class="btn btn-secundary btn-see-more"><i class="material-icons">add</i><span>Adicionar Livros</span></button>
+            {% endif %}
         </div>
         <div class="card-conteiner">
-            <div class="card">
-                <div class="card-img">
-                    <a href=""><img src="" alt="livro"></a>
-                    <span>R$ 79,90</span>
-                    <button type="button"><i class="material-icons">add_shopping_cart</i></button>
+            {% for livro in livros %}
+                <div class="card">
+                    <div class="card-img">
+                        <a href=""><img src="{{ url }}{{ livro.dir_img }}" alt="livro"></a>
+                        <span>R$ {{ livro.valor }}</span>
+                        <button type="button"><i class="material-icons">add_shopping_cart</i></button>
+                    </div>
+                    <div class="card-content">
+                        <p>{{ livro.nome_livro }}</p>
+                        <p>{{ livro.autor }}</p>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <p>Game of Thrones</p>
-                    <p>George R. R. Martin</p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 
