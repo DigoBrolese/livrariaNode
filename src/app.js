@@ -3,6 +3,7 @@ const path = require('path');
 const nunjucks = require('nunjucks');
 const indexRouter = require('./routes/route');
 const cookieParser = require('cookie-parser');
+const axios = require('axios');
 
 // Session
 const session = require('express-session');

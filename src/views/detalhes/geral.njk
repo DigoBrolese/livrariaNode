@@ -1,0 +1,73 @@
+{% extends '_layouts/layout.njk' %}
+
+{% block style %}
+    <link type="text/css" rel="stylesheet" href="{{ url }}{{ 'css/detalhes/geral.css'  }}">
+{% endblock %}
+
+{% block title %}Login - eLivraria{% endblock %}
+
+{% block content %}
+    <div class="card-head-details">
+        <h2>{{ livro.autor }}</h2>
+        <h3>{{ livro.nome_livro }}</h3>
+    </div>
+    <div class="conteiner-principal">
+        <div class="card-conteiner">
+            <div class="card-img-details">
+                <div class="card-img">
+                    <img src="{{ livro.dir_img }}" alt="livro">
+                </div>
+            </div>
+        </div>
+        <div class="card-content-purchase">
+            <h2>Comprar</h2>
+            <div class="price">
+                <h1>R$ {{ livro.valor }}
+                    <em>em 1x no crédito ou À Vista no Boleto</em>
+                </h1>
+                <div>
+                    <i class="material-icons iconCard">payment</i>
+                    <p>Parcelado no Cartão: {{ livro.valor }} em até 2x de R$ 39,95 sem juros</p>
+                </div>
+            </div>
+            <div class="calcularFrete">
+                <form>
+                    <div>
+                        <label for="campoCalcularFrete">Calcular Frete</label>
+                        <input id="campoCalcularFrete" type="text" placeholder="CEP">
+                        <input type="hidden" value="{{ livro.valor }}" id="precoLivro" required>
+                    </div>
+                    <button type="button" class="btn btn-secundary btn-calcular-frete">Calcular</button>
+                </form>
+                <div class="valorFrete"></div>
+            </div>
+            <div class="group-button-purchase">
+                <button type="button" class="btn btn-secundary"><i class="material-icons">add_shopping_cart</i>Adicionar no carrinho</button>
+                <button type="button" class="btn btn-primaty">Comprar</button>
+            </div>
+        </div>
+    </div>
+    <div class="conteiner-details">
+        <div class="card-content-details">
+            <h2>Detalhes</h2>
+            <div>
+                <div>
+                    <p><b>Autor: </b>{{ livro.autor }}</p>
+                    <p><b>Editora: </b>{{ livro.editora }}</p>
+                    <p><b>Publicado: </b>{{ livro.dt_publicacao }}</p>
+                </div>
+                <div>
+                    <p><b>Páginas: </b>{{ livro.paginas }}</p>
+                    <p><b>Idioma: </b>{{ livro.idioma }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-content-description">
+            <h2>Descrição</h2>
+            <p class="details-text">{{ livro.descricao }}</p>
+        </div>
+    </div>
+{% endblock %}
+{% block script %}
+    <script src="{{ url }}{{'js/detalhes/geral.js'}}"></script>
+{% endblock %}

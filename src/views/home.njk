@@ -19,13 +19,32 @@
             {% for livro in livros %}
                 <div class="card">
                     <div class="card-img">
-                        <a href=""><img src="{{ url }}{{ livro.dir_img }}" alt="livro"></a>
+                        <a href="{{ url }}det/{{ livro.id }}"><img src="{{ url }}{{ livro.dir_img }}" alt="livro"></a>
                         <span>R$ {{ livro.valor }}</span>
                         <button type="button"><i class="material-icons">add_shopping_cart</i></button>
                     </div>
                     <div class="card-content">
                         <p>{{ livro.nome_livro }}</p>
                         <p>{{ livro.autor }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="head-data">
+            <h2>Ficção</h2>
+            <button class="btn btn-secundary btn-see-more"><i class="material-icons">add</i><span>Ver Mais</span></button>
+        </div>
+        <div class="card-conteiner">
+            {% for livro in livrosApi %}
+                <div class="card">
+                    <div class="card-img">
+                        <a href="{{ url }}det/{{ livro.id }}"><img src="{{ livro.volumeInfo.imageLinks.thumbnail }}" alt="livro"></a>
+                        <span>R$ 79.90</span>
+                        <button type="button"><i class="material-icons">add_shopping_cart</i></button>
+                    </div>
+                    <div class="card-content">
+                        <p>{{ livro.volumeInfo.title }}</p>
+                        <p>{{ livro.volumeInfo.authors[0] }}</p>
                     </div>
                 </div>
             {% endfor %}

@@ -45,7 +45,6 @@ class UsersController {
         let session = req.session;
 
         let dados = req.body;
-        let usuarioEncontrado = {};
         let password = '';
         if ((dados.email).length > 0 && (dados.senha).length > 0 ) {
             password = certificate.createHash('sha512').update(dados.senha).digest('hex');
@@ -60,7 +59,6 @@ class UsersController {
         });
 
         if (usuarios.length > 0) {
-            console.log(usuarios[0].dataValues);
             req.logIn(usuarios[0].dataValues, err => {
                 if (err) { return res.status(400).json({message: err}) }
 

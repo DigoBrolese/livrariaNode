@@ -12,6 +12,8 @@ router.get('/logout', function (req, res) {
     res.redirect('/');
 });
 
+router.get('/det/:id', controllers.LivroController.detalhes);
+
 router.post('/login', controllers.UsersController.login);
 
 router.get('/singin', controllers.UsersController.index);
